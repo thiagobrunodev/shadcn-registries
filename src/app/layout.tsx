@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const geistSans = Geist({
     variable: '--font-geist-sans',
@@ -15,7 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
     title: 'Shadcn Registries',
-    description: 'A collection of components, templates, and tools built with shadcn/ui and Next.js.',
+    description:
+        'A collection of components, templates, and tools built with shadcn/ui and Next.js.',
 }
 
 export default function RootLayout({
@@ -28,6 +30,7 @@ export default function RootLayout({
             <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
                 {children}
                 <SpeedInsights />
+                <Analytics />
             </body>
         </html>
     )
